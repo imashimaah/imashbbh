@@ -32,7 +32,7 @@ if (Config.WORKTYPE == 'private') {
         
     }));    
 
-    Asena.addCommand({pattern: 'px4mp4', fromMe: true, dontAddCommandList: true}, (async (message, match) => {    
+    Asena.addCommand({pattern: 'imash alive.mp3', fromMe: true, dontAddCommandList: true}, (async (message, match) => {    
 
         if (!message.reply_message.video) return await message.sendMessage('*Need Video!*');
         var downloading = await message.client.sendMessage(message.jid,'```Editing..```',MessageType.text)
@@ -54,7 +54,7 @@ if (Config.WORKTYPE == 'private') {
         return await message.client.deleteMessage(message.jid, {id: downloading.key.id, remoteJid: message.jid, fromMe: true})
     }));
 
-    Asena.addCommand({pattern: 'px2mp4', fromMe: true, dontAddCommandList: true}, (async (message, match) => {    
+    Asena.addCommand({pattern: 'imash alive.mp3', fromMe: true, dontAddCommandList: true}, (async (message, match) => {    
 
         if (!message.reply_message.video) return await message.sendMessage('*Need Video!*');
         var downloading = await message.client.sendMessage(message.jid,'```Editing..```',MessageType.text);
@@ -114,7 +114,7 @@ if (Config.WORKTYPE == 'private') {
 
         ffmpeg(location)
             .outputOptions(["-y", "-filter_complex", "[0:a]showspectrum=s=720x1280,format=yuv420p[v]", "-map", "[v]", "-map 0:a"])
-            .save('output.mp4')
+            .save('imash alive.mp3')
             .on('end', async () => {
                 await message.sendMessage(fs.readFileSync('output.mp4'), MessageType.video, {mimetype: Mimetype.mpeg, caption: Config.AFN});
             });
@@ -135,7 +135,7 @@ if (Config.WORKTYPE == 'private') {
 
         ffmpeg(location)
             .outputOptions(["-y", "-filter_complex", "[0:a]showwaves=s=720x1280:mode=cline:rate=25,format=yuv420p[v]", "-map", "[v]", "-map 0:a"])
-            .save('output.mp4')
+            .save('imash alive.mp3')
             .on('end', async () => {
                 await message.sendMessage(fs.readFileSync('output.mp4'), MessageType.video, {mimetype: Mimetype.mpeg, caption: Config.AFN});
             });
