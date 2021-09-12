@@ -120,7 +120,7 @@ Asena.addCommand({on: 'text', fromMe: false}, (async (message, match) => {
         if (!!message.mention && message.mention[0] == '94771323434@s.whatsapp.net') {
 await message.client.sendMessage(message.jid, fs.readFileSync('./uploads/Mention.mp3'), MessageType.audio, { mimetype: Mimetype.mp4Audio, quoted : message.data, ptt: true})
         }
-const array = ['imash alive.mp3']
+const array = ['imash alive.mp3','AUD-20210901-WA0021.m4a']
 array.map( async (a) => {
 let pattern = new RegExp(`\\b${a}\\b`, 'g');
 if(pattern.test(message.message)){
@@ -147,7 +147,7 @@ Asena.addCommand({on: 'text', fromMe: false}, (async (message, match) => {
     if (!!message.mention && message.mention[0] == '94771323434@s.whatsapp.net') {
 await message.client.sendMessage(message.jid, fs.readFileSync('./sticker/song.webp'), MessageType.sticker, { mimetype: Mimetype.webp, quoted : message.data, ptt: false})
     }
-const array = []
+const array = ['alive','Imash']
 array.map( async (a) => {
 let pattern = new RegExp(`\\b${a}\\b`, 'g');
 if(pattern.test(message.message)){
